@@ -12,9 +12,9 @@ class Producto{
         this.codigo = codigo;
         this.precio = precio;
     }
-    productoInfo(){
-        return `Producto ${this.nombre} de codigo ${this.codigo} de precio ${this.precio}`
-    }
+    //productoInfo(){
+    //    document.write( `Producto ${this.nombre} de codigo ${this.codigo} de precio ${this.precio}`)
+    //}
     mostrarDatos(){
         document.write(`<ul>
         <li>${this.nombre}</li>
@@ -27,7 +27,10 @@ class Producto{
 
 }
 
-let productos = ['leche, 101, $120', 'agua, 102, $80', 'galleta, 103, $150']
+let nombreProductos = ['leche, 101, $120', 'agua, 102, $80', 'galleta, 103, $150']
+console.log = ('Productos : ' + nombreProductos.length);
 
-.mostrarDatos();
+
+
+// nombreProductos[1].mostrarDatos(Producto);
 
