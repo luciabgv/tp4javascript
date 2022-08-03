@@ -18,3 +18,71 @@
 // agendaLlena(): indica si la agenda está llena.
 // huecosLibres(): indica cuántos contactos más podemos ingresar.
 
+class Contacto {
+    constructor(nombre, numeroTel){
+        this.nombre = nombre
+        this. numeroTel = numeroTel
+        this.contacto = []
+
+
+    }
+
+//
+//metodo
+
+// aniadirContacto(Contacto): Añade un contacto a la agenda, 
+
+aniadirContacto() {
+    //push
+this.contacto.push(this.nombre)
+}
+
+// existeContacto(Conctacto): indica si el contacto pasado existe o no.
+
+existeContacto(){
+
+}
+
+// listarContactos(): Lista toda la agenda
+
+listarContactos(){
+
+}
+
+// buscarContacto(nombre): busca un contacto por su nombre y muestra su teléfono.
+
+buscarContacto(){
+
+}
+
+// eliminarContacto(Contacto c): elimina el contacto de la agenda 
+
+eliminarContacto(){
+
+}
+
+// agendaLlena(): indica si la agenda está llena.
+
+agendaLelna(){
+
+}
+
+// huecosLibres(): indica cuántos contactos más podemos ingresar.
+
+huecoLibre(){
+
+}
+
+mostrarDatos(){
+    document.write(`<ul>
+    <li>Nombre: ${this.nombre}</li>
+    <li>Numero de telefono: ${this.numeroTel} </li>
+    </ul>`)
+}
+
+}
+
+let contacto1 = new Contacto ('Lucia', '555555')
+
+contacto1.mostrarDatos();
+contacto1.aniadirContacto();
