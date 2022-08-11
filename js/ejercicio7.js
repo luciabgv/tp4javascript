@@ -20,8 +20,8 @@
 
 class Contacto {
     constructor(nombre, numeroTel){
-        this.nombre = nombre
-        this. numeroTel = numeroTel
+        this.nombre = nombre;
+        this. numeroTel = numeroTel;
         this.contacto = []
 
 
