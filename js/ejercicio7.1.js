@@ -10,27 +10,34 @@ class Agenda {
     this.contactos = [];
     this.tamanio = tamanio;
   }
-  agregarContacto(contacto){
+  agregarContacto(contacto) {
     // console.log("estoy en agregar contacto");
-   //verificar si el contacto existe 
-   this.existeContacto(contacto.nombre)
-   //verificar q la agenda tenfa espacio disponible
-
+    //verificar si el contacto existe
+    if(this.existeContacto(contacto.nombre) === false){
+    //al retornar verdadero o falso, puedo usar una pregunta en la cual este almacenada esa informacion
+    //verificar q la agenda tenfa espacio disponible
     this.contactos.push(contacto);
-    console.log(this.contactos); 
+  }
+  console.log(this.contactos);
+
+  existeContacto(nombre) {
+    //buscar el contacto
+    const contactoBuscado = this.contactos.find((itemContacto) => {
+      return itemContacto.nombre === nombre;
+    });
+    // console.log(contactoBuscado);
+    if(contactoBuscado){
+      console.log('El nombre ya existe en la agenda')
+      return true; // si encontre el contacto
+    }else{
+      console.log('El nombre no existe en la agenda')
+      return false; // no encontre el contacto
+    }
+
+  }
 }
 
-existeContacto(nombre){
-    //buscar el contacto 
-    const contactoBuscado = this.contactos.find((itemContacto)=> {return itemContacto.nombre === nombre});
-    console.log(contactoBuscado);
-    return true; //si encontre el contacto
-
-}
-
-}
-
-const agendaPrueba = new Agenda();//si agrego otro valor al parametro tamanio
+const agendaPrueba = new Agenda(); //si agrego otro valor al parametro tamanio
 console.log(agendaPrueba);
 do {
   let opcion = parseInt(
@@ -47,7 +54,7 @@ do {
     case 1:
       //agregar contacto
       //crear el contacto
-      let nombreNuevo = prompt("Ingrese un nombre");
+      let nombreNuevo = prompt("Ingrese un nombre").toLowerCase();
       let telefonoNuevo = prompt("Ingrese un telefono");
       let contactoNuevo = new Contacto(nombreNuevo, telefonoNuevo);
       console.log(contactoNuevo);
@@ -55,10 +62,11 @@ do {
 
       agendaPrueba.agregarContacto(contactoNuevo);
       break;
+
     case 2:
       //Existe contacto
       let nombreBuscar = prompt("Ingrese un nombre").toLowerCase();
-    agendaPrueba.existeContacto(contactoBuscado);
+      agendaPrueba.existeContacto(nombreBuscar);
       break;
     case 3:
       //Lista contacto
@@ -71,6 +79,8 @@ do {
       break;
     case 6:
       //verificar si la agenda esta llena
+      agendaPrueba.agendaLlena();
+      
       break;
     case 7:
       //verificar espacio libre
